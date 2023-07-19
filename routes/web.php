@@ -1,6 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\KontakController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +25,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middelware'=>['auth']], function(){
+    Route::resource('users', UserController::class);
+    Route::resource('kontak', KontakController::class);
+    Route::resource('produk', ProdukController::class);
+    Route::resource('berita', BeritaController::class);
+    Route::resource('profil', ProfilController::class);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
