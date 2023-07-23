@@ -19,10 +19,10 @@ class CreateProduksTable extends Migration
             // $table->string('harga');
             $table->longText('deskripsi');
             $table->string('gambar');
-            $table->string('gambar2');
-            $table->string('gambar3');
-            $table->string('gambar4');
-            $table->string('gambar5');
+            $table->string('gambar2')->nullable();
+            $table->string('gambar3')->nullable();
+            $table->string('gambar4')->nullable();
+            $table->string('gambar5')->nullable();
             $table->timestamps();
         });
     }

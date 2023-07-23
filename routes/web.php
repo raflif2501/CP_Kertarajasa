@@ -7,6 +7,7 @@ use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,13 @@ use App\Http\Controllers\ProfilController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('/');
+Route::get('/detail/{id}', [WelcomeController::class, 'detail'])->name('detail');
+Route::get('/spesifikasi/{id}', [WelcomeController::class, 'spesifikasi'])->name('spesifikasi');
+Route::get('/allberita', [WelcomeController::class, 'berita'])->name('berita');
 
 Auth::routes();
 
