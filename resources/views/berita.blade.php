@@ -52,6 +52,13 @@
             <div class="container">
                 <div class="section-header">
                     <h2>BERITA</h2>
+                    <div style="float: right">
+                        <form action="/cariberita" method="GET">
+                            <input type="text" name="cari" placeholder="Cari Berita ..."
+                                value="{{ old('cari') }}">
+                            <input type="submit" value="CARI">
+                        </form>
+                    </div>
                 </div>
                 <div class="row">
                     @foreach ($data as $q)

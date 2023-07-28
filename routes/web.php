@@ -27,6 +27,7 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 Route::get('/detail/{id}', [WelcomeController::class, 'detail'])->name('detail');
 Route::get('/spesifikasi/{id}', [WelcomeController::class, 'spesifikasi'])->name('spesifikasi');
 Route::get('/allberita', [WelcomeController::class, 'berita'])->name('berita');
+Route::get('/cariberita',[WelcomeController::class, 'cari'])->name('cari');
 
 Auth::routes();
 

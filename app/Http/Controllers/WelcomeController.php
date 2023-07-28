@@ -13,7 +13,7 @@ class WelcomeController extends Controller
     {
         $berita1 = Berita::orderByRaw('created_at DESC')->paginate(1);
         $d = Berita::select('id')->orderByRaw('created_at DESC')->first();
-        $berita = Berita::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(3);
+        $berita = Berita::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(2);
         $produk = Produk::all();
         // $produk1 = Produk::get()->last();
         $kontak = Kontak::all();
@@ -40,4 +40,16 @@ class WelcomeController extends Controller
         // die;
         return view('berita',compact('data','kontak'));
     }
+    public function cari(Request $request)
+	{
+        $kontak = Kontak::all();
+
+		$cari = $request->cari;
+		$data = Berita::select("*")
+		->where('judul','like',"%".$cari."%")
+		->paginate();
+
+		return view('berita',compact('kontak','data'));
+
+	}
 }

@@ -94,6 +94,16 @@
                         </center>
                     </div>
                     <div class="col-md-6">
+                        <p style="text-align: justify; text-indent: 0.5in;">
+                            Even with more than 20 years experience in the field, we keep listening to our customer
+                            need, developing and expanding our range of product to fulfill the demanding need. From year
+                            1985-2008, PT Kerta Rajasa Raya has numerous investment of new technology to fulfill the
+                            demand of high quality product, more range of end product and production optimization.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
                         <p style="text-align: justify; text-indent: 0.5in;">PT Kerta Rajasa Raya is located at East Java
                             of Indonesia. From beginning our company is
                             integrated manufacture of Woven Bag and Jumbo Bag from raw material to finish bag. Our
@@ -102,16 +112,6 @@
                             started to expand and export our bags to Japan and Singapore in 1985. In the same year PT
                             Kerta Rajasa Raya become the most fast growing company and lead the market in the
                             industries.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p style="text-align: justify; text-indent: 0.5in;">
-                            Even with more than 20 years experience in the field, we keep listening to our customer
-                            need, developing and expanding our range of product to fulfill the demanding need. From year
-                            1985-2008, PT Kerta Rajasa Raya has numerous investment of new technology to fulfill the
-                            demand of high quality product, more range of end product and production optimization.
                         </p>
                     </div>
                     <div class="col-md-6">
