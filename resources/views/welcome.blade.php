@@ -184,7 +184,7 @@
                                 <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="img-fluid"
                                     alt="">
                                 <a href="/detail/{{ $q->id }}" class="details-link" title="More Details">
-                                    <h5>{{ $q->judul }}</h5>
+                                    <h6>{{ $q->judul }}</h6>
                                     <i class="bx bx-link"></i>
                                 </a>
                             </div>
