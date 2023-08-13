@@ -6,7 +6,7 @@
 
 /* Color */
 :root {
-  --color-primary: #700614;
+  --color-primary: #C10B0A;
   --color-bg: #F3FFF4;
 }
 
@@ -27,8 +27,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-primary);
+  /* color : white; */
 }
-
+ h1,
+ h3,
+ p {
+    color: white;
+ }
 /* Header */
 section {
   padding: 50px 0;
@@ -637,11 +642,58 @@ section {
 }
 
 .pendidikan .pendidikan-wrap .pendidikan-info p {
-  color: #fff;
+  color: #F1F0E8;
   font-size: 14px;
   margin-bottom: 0;
   padding-right: 50px;
 }
+
+/* Produk */
+.produk .card-produk {
+    background: #F1F0E8;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .produk .card-produk img {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .produk .card-produk a {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .produk .card-produk a:hover{
+    color: var(--color-primary);
+  }
+
+  .produk .card-produk span {
+    font-style: italic;
+    display: block;
+    font-size: 14px;
+    color: #6c757d;
+  }
+
+  .produk .card-produk p {
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: #6c757d;
+  }
+
+  .produk a {
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+  }
 
 /* Berita */
 .berita .card-berita {
@@ -700,7 +752,7 @@ section {
   border-radius: 10px;
   padding: 15px;
   overflow: hidden;
-  /* box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
 }
 
 .data-berita .data-berita-item img {
