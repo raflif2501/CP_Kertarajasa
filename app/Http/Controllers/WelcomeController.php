@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Produk;
 use App\Models\Kontak;
+use App\Models\Profil;
 
 class WelcomeController extends Controller
 {
@@ -17,7 +18,8 @@ class WelcomeController extends Controller
         $produk = Produk::all();
         // $produk1 = Produk::get()->last();
         $kontak = Kontak::all();
-        return view('welcome',compact('berita1','berita','produk','kontak'));
+        $profil = Profil::all();
+        return view('welcome',compact('berita1','berita','produk','kontak','profil'));
     }
     public function detail($id){
         $data = Berita::find($id);

@@ -6,29 +6,33 @@
         <section class="beranda" style="background-color: #1101AD">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <br><br>
-                        <img src="https://kertarajasa.co.id/wp-content/uploads/2013/04/KRR.jpg" class="d-block w-100"
-                            alt="..." style="border-radius: 15px 15px 15px 15px;" class="img-fluid animated">
-                    </div>
-                    <div class="col-lg-4 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-in">
-                        <div style="text-align: right; color:white">
+                    @foreach ($profil as $pr)
+                        <div class="col-lg-8 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-in"
+                            data-aos-delay="200">
                             <br><br>
-                            <h4>The Biggest Capacity</h4>
-                            <br>
-                            <h4>Responsible Corporate</h4>
-                            <br>
-                            <h4>Quality Assurance</h4>
-                            <br>
-                            <h4>Solid Team</h4>
-                            <br>
-                            <h4>Over 25 Years Experience</h4>
+                            <img src="{{ asset('foto/profil/gambar1') }}/{{ $pr->gambar }}" class="d-block w-100"
+                                alt="..." style="border-radius: 15px 15px 15px 15px;" class="img-fluid animated">
                         </div>
-                    </div>
+                        <div class="col-lg-4 order-2 order-lg-1 d-flex flex-column justify-content-center"
+                            data-aos="zoom-in">
+                            <div style="text-align: right; color:white">
+                                <br><br>
+                                <h3>{!! $pr->isi !!}</h3>
+                                {{-- <h4>The Biggest Capacity</h4>
+                                <br>
+                                <h4>Responsible Corporate</h4>
+                                <br>
+                                <h4>Quality Assurance</h4>
+                                <br>
+                                <h4>Solid Team</h4>
+                                <br>
+                                <h4>Over 25 Years Experience</h4>
+                            </div> --}}
+                            </div>
+                        </div>
+                    @endforeach
+                    <br><br><br>
                 </div>
-                <br><br><br>
-            </div>
         </section>
         <!-- About -->
         <section class="about" id="about" data-aos="fade-up" style="background-color:#1101AD">
