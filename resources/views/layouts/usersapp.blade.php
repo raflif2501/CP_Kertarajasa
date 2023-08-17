@@ -22,6 +22,13 @@
     <link href="{{ asset('user') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ asset('user') }}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="{{ asset('user') }}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <style>
+        .isi {
+            -webkit-column-width: 400px;
+            -moz-column-width: 400px;
+            column-width: 400px;
+        }
+    </style>
 </head>
 
 <body>

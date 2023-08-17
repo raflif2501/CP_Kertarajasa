@@ -59,16 +59,19 @@
                             Kerta Rajasa Raya become the most fast growing company and lead the market in the
                             industries.
                         </p>
-
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <p style="text-align: justify; text-indent: 0.5in;">
                             Even with more than 20 years experience in the field, we keep listening to our customer
                             need, developing and expanding our range of product to fulfill the demanding need. From year
                             1985-2008, PT Kerta Rajasa Raya has numerous investment of new technology to fulfill the
                             demand of high quality product, more range of end product and production optimization.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: justify; text-indent: 0.5in;">
                             In order to fulfill the need of expanding the range of product and demand, in year 2009 we
                             investing on the latest integrated line of the world famous ad*starKON technology from
                             austria to produce Multi Purpose Block Bottom Valve bag namely AD*STAR* bag.

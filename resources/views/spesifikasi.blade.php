@@ -8,6 +8,25 @@
                     <br>
                     <h3>{{ $data->nama }}</h3>
                 </div>
+                @php
+                    function isi1($judul)
+                    {
+                        $panjang = strlen($judul);
+                        $bagi = $panjang / 2;
+                        $hasil = substr($judul, 0, $bagi);
+                        return $hasil;
+                    }
+                @endphp
+                @php
+                    function isi2($judul)
+                    {
+                        $panjang = strlen($judul);
+                        $bagi = $panjang / 2;
+                        $hasil1 = substr($judul, 0, $bagi);
+                        $hasil2 = substr($judul, $bagi);
+                        return $hasil2;
+                    }
+                @endphp
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-karya mb-3">
@@ -55,9 +74,18 @@
                                     </button>
                                 </div>
                             </center>
-                            <div style="text-align: justify; color:white">
-                                <p> {!! $data->deskripsi !!}</p>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="isi">
+                        <div style="text-align: justify; color:white">
+                            <p> {!! isi1($data->deskripsi) !!}</p>
+                        </div>
+                    </div>
+                    <div class="isi">
+                        <div style="text-align: justify; color:white">
+                            <p> {!! isi2($data->deskripsi) !!}</p>
                         </div>
                     </div>
                 </div>

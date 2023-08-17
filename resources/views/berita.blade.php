@@ -18,7 +18,7 @@
                     <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
                         <div class="swiper-wrapper">
                             @foreach ($data as $q)
-                                <div class="mb-3 swiper-slide">
+                                <div class="mb-3 swiper-slide" style="padding: 8px">
                                     <div class="data-berita-wrap">
                                         <div class="data-berita-item">
                                             <a href="/detail/{{ $q->id }}" class="details-link" title="More Details">
