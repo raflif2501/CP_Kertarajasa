@@ -6,7 +6,7 @@
 
 /* Color */
 :root {
-  --color-primary: #C10B0A;
+  --color-primary: #B31312;
   --color-bg: #F3FFF4;
 }
 
@@ -650,7 +650,7 @@ section {
 
 /* Produk */
 .produk .card-produk {
-    background: #F1F0E8;
+    background: #EA906C;
     border-radius: 10px;
     padding: 15px;
     overflow: hidden;
@@ -697,7 +697,7 @@ section {
 
 /* Berita */
 .berita .card-berita {
-  background: #fff;
+  background: #EEE2DE;
   border-radius: 10px;
   padding: 15px;
   overflow: hidden;
@@ -744,15 +744,19 @@ section {
 
 /* Data Berita */
 .data-berita .data-berita-wrap {
-  padding-left: 12px;
+    background: #EA906C;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
 }
 
 .data-berita .data-berita-item {
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  overflow: hidden;
-  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+    background: #EA906C;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
 }
 
 .data-berita .data-berita-item img {

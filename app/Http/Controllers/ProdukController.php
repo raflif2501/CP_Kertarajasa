@@ -26,7 +26,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $data = Produk::all();
+        // $data = Produk::all();
+        $data = Produk::select("*")->orderByRaw('created_at DESC')->paginate();
         return view('produk.index',compact('data'));
     }
 
@@ -248,4 +249,13 @@ class ProdukController extends Controller
         Alert::success('Success', 'Data Berhasil Dihapus');
         return redirect()->route('produk.index');
     }
+
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+		$data = Produk::select("*")
+		->where('nama','like',"%".$cari."%")
+		->paginate();
+		return view('produk.index',compact('data'));
+	}
 }

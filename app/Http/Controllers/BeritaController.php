@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
 use Image;
+use Carbon\Carbon;
 
 class BeritaController extends Controller
 {
@@ -26,7 +27,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $data = Berita::all();
+        // $data = Berita::all();
+        $data = Berita::select("*")->orderByRaw('tanggal DESC')->paginate();
         return view('berita.index',compact('data'));
     }
 
@@ -37,7 +39,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('berita.create');
+        $today = Carbon::now()->format('Y-m-d');
+        // dd($today);die;
+        return view('berita.create',compact('today'));
     }
 
     /**
@@ -152,6 +156,7 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $today = Carbon::now()->format('Y-m-d');
         $pesan = [
             'required' => ':attribute wajib diisi !',
             'min' => ':attribute harus diisi minimal :min karakter !',
@@ -161,7 +166,7 @@ class BeritaController extends Controller
             $this->validate($request, [
             'judul' => 'required',
             'gambar' => 'required|image|file|max:1024',
-            'tanggal' => 'required',
+            // 'tanggal' => 'required',
             // 'pembelian' => 'required',
             'isi' => 'required',
             ],$pesan);
@@ -175,7 +180,7 @@ class BeritaController extends Controller
             if($request->file('gambar','gambar2','gambar3','gambar4','gambar5') == "") {
             $data->update([
                 'judul' => $request->judul,
-                'tanggal' => $request->tanggal,
+                'tanggal' => $today,
                 'isi' => $request->isi,
             ]);
 
@@ -222,7 +227,7 @@ class BeritaController extends Controller
             'gambar4' => $name4,
             'gambar5' => $name5,
             'judul' => $request->judul,
-            'tanggal' => $request->tanggal,
+            'tanggal' => $today,
             'isi' => $request->isi,
             ]);
             }
@@ -248,4 +253,13 @@ class BeritaController extends Controller
         Alert::success('Success', 'Data Berhasil Dihapus');
         return redirect()->route('berita.index');
     }
+
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+		$data = Berita::select("*")
+		->where('judul','like',"%".$cari."%")
+		->paginate();
+		return view('berita.index',compact('data'));
+	}
 }

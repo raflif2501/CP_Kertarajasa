@@ -18,8 +18,9 @@ class WelcomeController extends Controller
         $produk = Produk::all();
         // $produk1 = Produk::get()->last();
         $kontak = Kontak::all();
-        $profil = Profil::all();
-        return view('welcome',compact('berita1','berita','produk','kontak','profil'));
+        $home = Profil::select("*")->where('judul','Home')->orderByRaw('created_at DESC')->paginate(1);
+        $about = Profil::select("*")->where('judul','About')->orderByRaw('created_at DESC')->paginate(1);
+        return view('welcome',compact('berita1','berita','produk','kontak','home','about'));
     }
     public function detail($id){
         $data = Berita::find($id);
@@ -45,13 +46,38 @@ class WelcomeController extends Controller
     public function cari(Request $request)
 	{
         $kontak = Kontak::all();
-
 		$cari = $request->cari;
 		$data = Berita::select("*")
 		->where('judul','like',"%".$cari."%")
 		->paginate();
-
 		return view('berita',compact('kontak','data'));
-
 	}
+
+    public function daniel()
+    {
+        $berita1 = Berita::orderByRaw('created_at DESC')->paginate(1);
+        $d = Berita::select('id')->orderByRaw('created_at DESC')->first();
+        $berita = Berita::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(2);
+        $produk = Produk::all();
+        // $produk1 = Produk::get()->last();
+        $kontak = Kontak::all();
+        $brt = Berita::all();
+        $home = Profil::select("*")->where('judul','Home')->orderByRaw('created_at DESC')->paginate(1);
+        $about = Profil::select("*")->where('judul','About')->orderByRaw('created_at DESC')->paginate(1);
+        return view('daniel.home',compact('berita1','berita','produk','kontak','home','about','brt'));
+    }
+    public function details($id){
+        $data = Berita::find($id);
+        $kontak = Kontak::all();
+        // var_dump($data);
+        // die;
+        return view('daniel.detail',compact('data','kontak'));
+    }
+    public function spesifikasis($id){
+        $data = Produk::find($id);
+        $kontak = Kontak::all();
+        // var_dump($data);
+        // die;
+        return view('daniel.spesifikasi',compact('data','kontak'));
+    }
 }

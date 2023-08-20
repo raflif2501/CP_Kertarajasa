@@ -24,10 +24,13 @@ use App\Http\Controllers\WelcomeController;
 //     return view('welcome');
 // });
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('/');
+Route::get('/daniel', [App\Http\Controllers\WelcomeController::class, 'daniel'])->name('daniel');
 Route::get('/detail/{id}', [WelcomeController::class, 'detail'])->name('detail');
 Route::get('/spesifikasi/{id}', [WelcomeController::class, 'spesifikasi'])->name('spesifikasi');
 Route::get('/allberita', [WelcomeController::class, 'berita'])->name('berita');
 Route::get('/cariberita',[WelcomeController::class, 'cari'])->name('cari');
+Route::get('/details/{id}', [WelcomeController::class, 'details'])->name('details');
+Route::get('/spesifikasis/{id}', [WelcomeController::class, 'spesifikasis'])->name('spesifikasis');
 
 Auth::routes();
 
@@ -37,5 +40,7 @@ Route::group(['middelware'=>['auth']], function(){
     Route::resource('produk', ProdukController::class);
     Route::resource('berita', BeritaController::class);
     Route::resource('profil', ProfilController::class);
+    Route::get('/cariberitaa',[BeritaController::class, 'cari'])->name('cariberita');
+    Route::get('/cariproduk',[ProdukController::class, 'cari'])->name('cariproduk');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

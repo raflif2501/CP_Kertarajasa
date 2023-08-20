@@ -1,4 +1,4 @@
-@extends('layouts.usersapp')
+@extends('daniel.app')
 
 @section('contentuser')
     <main id="main">

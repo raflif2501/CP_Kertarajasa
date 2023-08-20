@@ -3,10 +3,10 @@
 @section('contentuser')
     <main id="main">
         <!-- Beranda -->
-        <section class="beranda" style="background-color: #1101AD">
+        <section class="beranda" style="background-color: #2B2A4C">
             <div class="container">
                 <div class="row">
-                    @foreach ($profil as $pr)
+                    @foreach ($home as $pr)
                         <div class="col-lg-8 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-in"
                             data-aos-delay="200">
                             <br><br>
@@ -35,7 +35,7 @@
                 </div>
         </section>
         <!-- About -->
-        <section class="about" id="about" data-aos="fade-up" style="background-color:#1101AD">
+        <section class="about" id="about" data-aos="fade-up" style="background-color:#2B2A4C">
             <br><br><br><br>
             {{-- <section id="cliens" class="cliens section-bg">
                 <div class="container">
@@ -48,6 +48,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
+                        <br>
                         <center>
                             <img src="{{ asset('loginn') }}/images/logo_.png" alt="" width="50%">
                         </center>
@@ -67,6 +68,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
+                        <br>
                         <p style="text-align: justify; text-indent: 0.5in;">
                             Even with more than 20 years experience in the field, we keep listening to our customer
                             need, developing and expanding our range of product to fulfill the demanding need. From year
@@ -88,7 +90,7 @@
         </section>
 
         <!-- Produk -->
-        <section class="produk" id="produk" data-aos="zoom-out" style="background-color: #1101AD">
+        <section class="produk" id="produk" data-aos="zoom-out" style="background-color: #2B2A4C">
             <br><br><br><br><br>
             {{-- <section id="cliens" class="cliens section-bg">
                 <div class="container">
@@ -117,7 +119,7 @@
         </section>
 
         <!-- Berita -->
-        <section class="berita" id="berita" data-aos="zoom-in" style="background-color: #1101AD">
+        <section class="berita" id="berita" data-aos="zoom-in" style="background-color: #2B2A4C">
             <br><br><br><br>
             {{-- <section id="cliens" class="cliens section-bg">
                 <div class="container">
@@ -127,28 +129,44 @@
                 <div class="section-header">
                     <h1>BERITA</h1>
                 </div>
+                @php
+                    function isi($judul)
+                    {
+                        $isi = substr($judul, 60, 130) . '...';
+                        return $isi;
+                    }
+                @endphp
+                @php
+                    function isi2($judul)
+                    {
+                        $isi = substr($judul, 60, 75) . '...';
+                        return $isi;
+                    }
+                @endphp
                 <div class="row">
                     <div class="col-md-9">
                         @foreach ($berita1 as $q)
                             <div class="card-berita mb-3">
-                                <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="img-fluid"
-                                    alt="" width="100%">
                                 <a href="/detail/{{ $q->id }}" class="details-link" title="More Details">
+                                    <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="img-fluid"
+                                        alt="" width="100%">
                                     <h4>{{ $q->judul }}</h4>
                                     <i class="bx bx-link"></i>
                                 </a>
+                                <p>{!! isi($q->isi) !!}</p>
                             </div>
                         @endforeach
                     </div>
                     <div class="col-md-3">
                         @foreach ($berita as $q)
                             <div class="card-berita mb-3">
-                                <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="img-fluid"
-                                    alt="">
                                 <a href="/detail/{{ $q->id }}" class="details-link" title="More Details">
+                                    <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="img-fluid"
+                                        alt="">
                                     <h6>{{ $q->judul }}</h6>
                                     <i class="bx bx-link"></i>
                                 </a>
+                                <p>{!! isi2($q->isi) !!}</p>
                             </div>
                         @endforeach
                         <div class="mt-4 text-center">

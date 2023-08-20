@@ -12,6 +12,12 @@
                                 Produk</a>
                         </h3>
                     </div>
+                    <div class="card-header">
+                        <form action="/cariproduk" method="GET" style="float: right">
+                            <input type="text" name="cari" placeholder="Cari Produk ..." value="{{ old('cari') }}">
+                            <input type="submit" value="CARI">
+                        </form>
+                    </div>
                     <!-- /.card-header -->
                     <div class="card-body table-full-width table-responsive">
                         <table id="example1" class="table table-hover">

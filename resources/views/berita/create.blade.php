@@ -10,6 +10,17 @@
             <div class="card-body">
                 <form action="{{ route('berita.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf
+                    <div class="col-sm-6" style="display: none">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input type="date" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror"
+                                placeholder="Masukkan Tanggal Berita" value="{{ $today }}">
+                            @error('tanggal')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- text input -->
@@ -26,20 +37,6 @@
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
-                                <label>Tanggal</label>
-                                <input type="date" name="tanggal"
-                                    class="form-control @error('tanggal') is-invalid @enderror"
-                                    placeholder="Masukkan Tanggal Berita" value="{{ old('tanggal') }}">
-                                @error('tanggal')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- text input -->
-                            <div class="form-group">
                                 <label>Gambar 1</label>
                                 <input type="file" name="gambar"
                                     class="form-control @error('gambar') is-invalid @enderror"
@@ -49,6 +46,8 @@
                                 @enderror
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
@@ -61,8 +60,6 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
@@ -75,6 +72,8 @@
                                 @enderror
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">
@@ -87,8 +86,6 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-6">
                             <!-- text input -->
                             <div class="form-group">

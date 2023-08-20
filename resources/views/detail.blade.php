@@ -3,7 +3,7 @@
 @section('contentuser')
     <main id="main">
         <!-- Detail -->
-        <section class="detail" id="detail" data-aos="fade-up" style="background-color: #1101AD">
+        <section class="detail" id="detail" data-aos="fade-up" style="background-color: #2B2A4C">
             <div class="container">
                 <div class="section-header">
                     <br>
