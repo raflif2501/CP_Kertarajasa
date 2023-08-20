@@ -91,13 +91,11 @@
                     <div class="row">
                         @foreach ($produk as $r)
                             <div class="card" style="width: 23rem;">
-                                <a href="/spesifikasis/{{ $r->id }}">
-                                    <div class="card-body">
-                                        <h5 class="card-title" style="text-align: center">{{ $r->nama }}</h5>
-                                    </div>
-                                    <img src="{{ asset('foto/produk/gambar1') }}/{{ $r->gambar }}" class="card-img-top"
-                                        alt="{{ $r->nama }}" style="text-align: center">
-                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title" style="text-align: center">{{ $r->nama }}</h5>
+                                </div>
+                                <img src="{{ asset('foto/produk/gambar1') }}/{{ $r->gambar }}" class="card-img-top"
+                                    alt="{{ $r->nama }}" style="text-align: center">
                             </div>&ensp;
                         @endforeach
                     </div>
@@ -111,13 +109,6 @@
                     <div class="section-header">
                         <h1>BERITA</h1>
                     </div>
-                    @php
-                        function judul($judul)
-                        {
-                            $isi = substr($judul, 0, 45) . '...';
-                            return $isi;
-                        }
-                    @endphp
                     <div class="row">
                         @foreach ($brt as $q)
                             <div class="card" style="width: 17rem;">
@@ -125,9 +116,7 @@
                                 <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="card-img-top"
                                     alt="{{ $q->judul }}">
                                 <div class="card-body">
-                                    <h6 class="card-title">{{ judul($q->judul) }}</h6>
-                                    <a href="/details/{{ $q->id }}" class="btn btn-primary"
-                                        style="float: right">Detail Berita</a>
+                                    <h6 class="card-title">{{ $q->judul }}</h6>
                                 </div>
                             </div>&ensp;
                         @endforeach
