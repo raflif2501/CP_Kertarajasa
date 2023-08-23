@@ -115,6 +115,9 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="mt-4 text-center">
+                    <a href="/allproduk">Lihat lainnya <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
             </div>
         </section>
 
@@ -144,7 +147,7 @@
                     }
                 @endphp
                 <div class="row">
-                    <div class="col-md-9">
+                    {{-- <div class="col-md-9">
                         @foreach ($berita1 as $q)
                             <div class="card-berita mb-3">
                                 <a href="/detail/{{ $q->id }}" class="details-link" title="More Details">
@@ -156,22 +159,22 @@
                                 <p>{!! isi($q->isi) !!}</p>
                             </div>
                         @endforeach
-                    </div>
-                    <div class="col-md-3">
-                        @foreach ($berita as $q)
+                    </div> --}}
+                    @foreach ($berita as $q)
+                        <div class="col-md-4">
                             <div class="card-berita mb-3">
                                 <a href="/detail/{{ $q->id }}" class="details-link" title="More Details">
                                     <img src="{{ asset('foto/berita/gambar1') }}/{{ $q->gambar }}" class="img-fluid"
-                                        alt="">
+                                        alt="" style="width: 100%">
                                     <h6>{{ $q->judul }}</h6>
                                     <i class="bx bx-link"></i>
                                 </a>
                                 <p>{!! isi2($q->isi) !!}</p>
                             </div>
-                        @endforeach
-                        <div class="mt-4 text-center">
-                            <a href="/allberita">Lihat lainnya <i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
+                    @endforeach
+                    <div class="mt-4 text-center">
+                        <a href="/allberita">Lihat lainnya <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                 </div>
             </div>

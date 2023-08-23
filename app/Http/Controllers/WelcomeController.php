@@ -14,7 +14,7 @@ class WelcomeController extends Controller
     {
         $berita1 = Berita::orderByRaw('created_at DESC')->paginate(1);
         $d = Berita::select('id')->orderByRaw('created_at DESC')->first();
-        $berita = Berita::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(2);
+        $berita = Berita::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(3);
         $produk = Produk::all();
         // $produk1 = Produk::get()->last();
         $kontak = Kontak::all();
@@ -43,6 +43,13 @@ class WelcomeController extends Controller
         // die;
         return view('berita',compact('data','kontak'));
     }
+    public function produk(){
+        $data = Produk::all();
+        $kontak = Kontak::all();
+        // var_dump($data);
+        // die;
+        return view('produk',compact('data','kontak'));
+    }
     public function cari(Request $request)
 	{
         $kontak = Kontak::all();
@@ -51,6 +58,15 @@ class WelcomeController extends Controller
 		->where('judul','like',"%".$cari."%")
 		->paginate();
 		return view('berita',compact('kontak','data'));
+	}
+    public function carip(Request $request)
+	{
+        $kontak = Kontak::all();
+		$cari = $request->cari;
+		$data = Produk::select("*")
+		->where('nama','like',"%".$cari."%")
+		->paginate();
+		return view('produk',compact('kontak','data'));
 	}
 
     public function daniel()

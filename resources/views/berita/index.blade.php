@@ -49,7 +49,15 @@
                                 $no = 1;
                                 function st($judul)
                                 {
-                                    $th = substr($judul, 0, 25) . '......';
+                                    $th = substr($judul, 0, 20) . '......';
+                                    return $th;
+                                }
+                            @endphp
+                            @php
+                                $no = 1;
+                                function isi($judul)
+                                {
+                                    $th = substr($judul, 0, 40) . '......';
                                     return $th;
                                 }
                             @endphp
@@ -57,9 +65,9 @@
                                 @foreach ($data as $p)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $p->judul }}</td>
+                                        <td>{{ st($p->judul) }}</td>
                                         <td>{{ $p->tanggal }}</td>
-                                        <td>{!! st($p->isi) !!}</td>
+                                        <td>{!! isi($p->isi) !!}</td>
                                         <td><img src="{{ asset('foto/berita/gambar1') }}/{{ $p->gambar }}"
                                                 alt="{{ $p->judul }}" style="max-width:100px;max-height:100px;"></td>
                                         @if ($p->gambar2 != null)

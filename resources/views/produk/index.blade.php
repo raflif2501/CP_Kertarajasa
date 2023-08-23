@@ -49,7 +49,7 @@
                                 $no = 1;
                                 function st($judul)
                                 {
-                                    $th = substr($judul, 0, 25) . '......';
+                                    $th = substr($judul, 0, 40) . '......';
                                     return $th;
                                 }
                             @endphp
