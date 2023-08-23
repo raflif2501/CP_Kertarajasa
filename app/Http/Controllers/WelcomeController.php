@@ -15,7 +15,7 @@ class WelcomeController extends Controller
         $berita1 = Berita::orderByRaw('created_at DESC')->paginate(1);
         $d = Berita::select('id')->orderByRaw('created_at DESC')->first();
         $berita = Berita::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(3);
-        $produk = Produk::all();
+        $produk = Produk::select("*")->whereNotIn('id',$d)->orderByRaw('created_at DESC')->paginate(3);
         // $produk1 = Produk::get()->last();
         $kontak = Kontak::all();
         $home = Profil::select("*")->where('judul','Home')->orderByRaw('created_at DESC')->paginate(1);
