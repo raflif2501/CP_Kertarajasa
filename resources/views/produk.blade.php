@@ -8,7 +8,7 @@
                 <div class="section-header">
                     <h2 style="color: white">PRODUK</h2>
                     <div style="float: right">
-                        <form action="/cariproduk" method="GET">
+                        <form action="/cariproduks" method="GET">
                             <input type="text" name="cari" placeholder="Cari Produk ..." value="{{ old('cari') }}">
                             <input type="submit" value="CARI">
                         </form>

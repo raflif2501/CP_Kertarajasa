@@ -30,7 +30,7 @@ Route::get('/spesifikasi/{id}', [WelcomeController::class, 'spesifikasi'])->name
 Route::get('/allberita', [WelcomeController::class, 'berita'])->name('berita');
 Route::get('/allproduk', [WelcomeController::class, 'produk'])->name('produk');
 Route::get('/cariberita',[WelcomeController::class, 'cari'])->name('cari');
-Route::get('/cariproduk',[WelcomeController::class, 'carip'])->name('carip');
+Route::get('/cariproduks',[WelcomeController::class, 'carip'])->name('carip');
 Route::get('/details/{id}', [WelcomeController::class, 'details'])->name('details');
 Route::get('/spesifikasis/{id}', [WelcomeController::class, 'spesifikasis'])->name('spesifikasis');
 
